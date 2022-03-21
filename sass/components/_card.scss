@@ -1,0 +1,37 @@
+@use '../sass-utils/variables.scss';
+
+.card{
+display: flex;
+flex-direction: column;
+padding: variables.$base-padding;
+min-height: min-content;   
+img{
+    border-radius: 2px;
+}
+.card-title{
+    font-size: variables.$base-font-size;
+    padding-bottom:variables.$base-padding;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+.card-body{
+    font-size:variables.$base-font-size;
+    padding: 1em;
+}
+    &:hover{
+     transition: all .2s ease-in-out;
+     transform: scale(1.1);
+    .card-overview{
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    }
+}
+.card-overview{
+        display: none;
+        padding: 0.5em;
+        border-bottom: 1px solid grey;        
+}  
+}

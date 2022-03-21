@@ -1,0 +1,44 @@
+@use "variables" as v;
+
+@mixin fullImage{
+    width: 100%;
+    height: auto;
+}
+
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin xs{
+    @media(min-width: map-get(v.$breakpoints,"xs")){
+        @content;
+    }
+}
+@mixin sm {
+    @media(min-width: map-get(v.$breakpoints, "sm")) {
+        @content;
+    }
+}
+@mixin md {
+    @media(min-width: map-get(v.$breakpoints, "md")) {
+        @content;
+    }
+}
+@mixin lg {
+    @media(min-width: map-get(v.$breakpoints, "lg")) {
+        @content;
+    }
+}
+@mixin xl {
+    @media(min-width: map-get(v.$breakpoints, "xl")) {
+        @content;
+    }
+}
+
+@mixin breakpoint($bp:0){
+    @media (min-width: $bp){
+        @content;
+    }
+}

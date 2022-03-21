@@ -1,0 +1,47 @@
+@use '../sass-utils/variables' ;
+@use "../sass-utils/mixins";
+
+@mixin btn($bg-color:transparent){
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    padding: variables.$base-padding variables.$base-padding*4;
+    background-color: $bg-color;
+
+}
+
+.firstBtn,.secondBtn{
+    @include btn();
+    @include mixins.center();
+}
+.goLeft, .goRight{
+    @include btn();
+    background-color: transparent;
+    font-weight: bold;
+    line-height: 25px;
+    text-align: center;
+    top: 125px;
+    z-index: 3;
+    border: none;
+    padding: 0;
+}
+.exitBtn{
+    @include btn();
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+
+
+@each $key, $val in variables.$colors{
+    .btn-#{""+$key}{
+        @include btn($val);
+        //hover mora bit ispod klasa da bi radilo radi & znaka..
+    &:hover{
+        background-color: lighten($color: $val, $amount: 5);
+    }
+}
+}

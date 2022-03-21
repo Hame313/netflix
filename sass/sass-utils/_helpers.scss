@@ -1,0 +1,11 @@
+@use 'variables';
+a{
+    color: variables.$anchorTagMainColor;
+    text-decoration: none;
+    font-weight: variables.$anchorTagFontWeight;
+    
+}
+.active {
+    color: variables.$anchorActiveTagColor;
+    font-weight: variables.$activeAnchorTagFontWeight !important;
+}

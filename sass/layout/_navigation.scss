@@ -1,0 +1,133 @@
+@use '../sass-utils/variables.scss'; 
+.frontLine{
+    position: relative;
+    z-index: 0;
+   
+ .content-box{
+    position: absolute;
+    top: 25%;
+    left: 7%;
+    margin: 0.5em;
+    z-index: 5;
+    .column{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        width: 30em;
+    h1{
+       
+        font-size: 3.8rem;
+        text-align: start;
+    }
+    p{
+        word-wrap: break-word;
+        font-size: 1.8rem;
+    }
+    .row{
+        display: flex;
+        gap: 2em;
+        button{
+            display: flex;
+            justify-content: center;
+            gap: 0.5em;
+            font-size: large;
+            align-items: center;
+            width: 9em;
+            height: 3em;
+            padding: 0;
+            border: none;
+            
+        &:focus{
+            outline: none;
+        }
+        }
+        
+        .firstBtn:hover{
+            background-color: grey;
+        }
+    }
+
+ }   
+}
+}
+.poster-image {
+   width: 100%;
+   max-height: 90vh;
+   z-index: 2;
+    	-webkit-box-shadow: 0 8px 6px -6px black;
+    	-moz-box-shadow: 0 8px 6px -6px black;
+    	box-shadow: 0 8px 6px -6px black;
+   
+}
+#player{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 90vh;
+    width: 100%;
+    border-radius : 10px;
+    -webkit-box-shadow: 0 8px 30px -6px grey;
+    -moz-box-shadow: 0 8px 30px -6px grey;
+    box-shadow: 0 8px 6px -6px grey;
+}   
+
+.start{
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    background-color: transparent;
+    top: 0;
+    list-style: none;
+.header {
+    -moz-box-align: center;
+    padding: 1% 4%;
+    height: 100px;
+    z-index: 98;
+    
+    .container-header {
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1% 4%;
+        z-index: 99;
+    }   
+ 
+        
+    li{
+        display: block;
+        font-size: 1.3rem;
+        font-weight: 800;
+    }
+    }
+    .first-nav{
+        display: flex;
+        justify-content: flex-start;
+        align-items:center;
+        gap: 2em;
+    }
+    .second-nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center ;
+        justify-content: flex-end;
+        gap: 1em;
+    }
+    .logo {
+        margin-right: 0;
+        max-width: 130px;
+        max-height: 40px;
+        display: inline-block;
+      
+
+    }
+    svg{
+        width: 32px;
+        max-height: 20px;
+    }
+}
+
+
+
+

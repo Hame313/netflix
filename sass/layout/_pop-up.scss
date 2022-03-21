@@ -1,0 +1,49 @@
+@use "../sass-utils/mixins";
+
+.pop-up{
+    position:fixed;
+    top: 40%;
+    left: 40%;
+    width:50em;
+
+    z-index: 99;
+    margin-top: -9em;
+    /*set to a negative number 1/2 of your height*/
+    margin-left: -15em;
+    border-radius: 10px;
+    /*set to a negative number 1/2 of your width*/
+    img {
+        @include mixins.fullImage;
+    }
+    .box{
+        padding:1em;
+    h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+        padding: 0.5em;
+    }
+    p{
+        text-align: left;
+        padding: 0.5em;
+    }
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+   
+      
+        padding: 1em;
+        
+    }
+    
+    iframe{
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        
+    }
+}

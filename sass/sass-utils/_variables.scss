@@ -1,0 +1,44 @@
+$backgroundColor:#141414;
+//anchor tag color nav links color
+$anchorActiveTagColor:#fff;
+$navLinkColor:#141414;
+$anchorTagMainColor:#e5e5e5;
+
+//button background color
+$buttonBgColor:white;
+
+//footer text color
+$footerTextColor:grey;
+
+
+//font-weight
+$anchorTagFontWeight:300;
+$activeAnchorTagFontWeight:600;
+$anchorTagSize:14px;
+
+// font size
+$base-font-size:1rem;
+
+// base border-radius
+$base-border-radius:5px;
+
+// padding
+$base-padding: 0.5rem;
+
+
+$colors:(
+    red:#db0000,
+        black:#000,
+        white:#fff,
+        grey:#564d4d,
+        dark-red:#831010,
+        transparent:transparent
+        );
+
+$breakpoints:(
+    "xs":0,
+    "sm":480px,
+    "md":720px,
+    "lg":960px,
+    "xl":1200px,
+);

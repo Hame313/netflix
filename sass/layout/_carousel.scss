@@ -1,0 +1,20 @@
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+  
+
+.carousel{
+    position: relative;
+    margin: 2em;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    scroll-behavior: smooth;  
+}
+
+}
+

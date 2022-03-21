@@ -1,0 +1,165 @@
+@use 'sass:math';
+@use "sass:map";
+@use '../sass-utils/variables'as v;
+
+$utilities: (
+    "border-radius": (
+        "prefix":"bRadius",
+        "values": ("0": 0,
+            "1": v.$base-border-radius,
+            "2": v.$base-border-radius + 5,
+            "3": v.$base-border-radius+ 10,
+            "4": v.$base-border-radius+15,
+            "5": v.$base-border-radius+20,
+            ),
+    ),
+    "padding": ("prefix":"p",
+        "values": ("0": 0,
+            "1": v.$base-padding,
+            "2": v.$base-padding * 2,
+            "3": v.$base-padding * 4,
+            "4": v.$base-padding * 6,
+            "5": v.$base-padding * 8),
+    ),
+    "padding-left":("prefix":"pl",
+        "values":("0": 0,
+            "1": v.$base-padding,
+            "2": v.$base-padding * 2,
+            "3": v.$base-padding * 4,
+            "4": v.$base-padding * 6,
+            "5": v.$base-padding * 8),
+    ),
+    "padding-top":("prefix":"pt",
+        "values":("0": 0,
+            "1": v.$base-padding,
+            "2": v.$base-padding * 2,
+            "3": v.$base-padding * 4,
+            "4": v.$base-padding * 6,
+            "5": v.$base-padding * 8),
+    ),
+    "padding-bottom":("prefix":"pb",
+        "values":("0": 0,
+            "1": v.$base-padding,
+            "2": v.$base-padding * 2,
+            "3": v.$base-padding * 4,
+            "4": v.$base-padding * 6,
+            "5": v.$base-padding * 8),
+    ),
+    "margin-left":("prefix":"ml",
+        "values":("0": 0,
+            "1": v.$base-padding,
+            "2": v.$base-padding * 2,
+            "3": v.$base-padding * 4,
+            "4": v.$base-padding * 6,
+            "5": v.$base-padding * 8),
+    ),
+    "margin-right":("prefix":"mr",
+        "values":("0": 0,
+            "1": v.$base-padding,
+            "2": v.$base-padding * 2,
+            "3": v.$base-padding * 4,
+            "4": v.$base-padding * 6,
+            "5": v.$base-padding * 8),
+    ),
+    "margin-top":("prefix":"mt",
+        "values":("0": 0,
+            "1": v.$base-padding,
+            "2": v.$base-padding * 2,
+            "3": v.$base-padding * 4,
+            "4": v.$base-padding * 6,
+            "5": v.$base-padding * 8),
+    ),
+    "margin-bottom":("prefix":"mb",
+        "values":("0": 0,
+            "1": v.$base-padding,
+            "2": v.$base-padding * 2,
+            "3": v.$base-padding * 4,
+            "4": v.$base-padding * 6,
+            "5": v.$base-padding * 8
+            ),
+    ),
+     "margin":("prefix":"m",
+         "values":("0": 0,
+             "1": v.$base-padding,
+             "2": v.$base-padding * 2,
+             "3": v.$base-padding * 4,
+             "4": v.$base-padding * 6,
+             "5": v.$base-padding * 8),
+     ),
+    "opacity":(
+        "prefix":"o",
+        "values":(
+            "10":0.1,
+            "20":0.2,
+            "30":0.3,
+            "40":0.4,
+            "50":0.5,
+            "60":0.6,
+            "70":0.7,
+            "80":0.8,
+            "90":0.9,
+            "100":1)
+            ,
+    ),
+    "background-color":(
+        "prefix":"bg",
+        "values": (
+        "red":#db0000,
+        "black":#000,
+        "white":#fff,
+        "grey":#141414,
+        "dark-red":#831010,
+        "transparent":transparent
+        ),
+        ),
+        "color":(
+            "prefix":"text",
+            "values": ("red":#db0000,
+                "black":#000,
+                "white":#fff,
+                "grey":#564d4d,
+                "dark-red":#831010,
+                "transparent":transparent
+                )
+        ),
+                "display":(
+                    "prefix":"disp",
+                    "values": (
+                        "block":block,
+                        "none":none,
+                        "inline-block":inline-block,
+                    )
+                        ),
+                "line-height":(
+                    "prefix":"line",
+                    "values": (
+                        "1-1":1.1,
+                        "1-2":1.2,
+                        "1-3":1.3,
+
+                    )
+)
+ );
+
+@each $property,$map in $utilities {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k,$v in $values {
+        @if($k=="default") {
+            .#{$prefix} {
+                #{$property}: $v;
+            }
+        }
+
+        @else {
+            .#{$prefix}-#{$k} {
+                #{$property}: $v;
+            }
+        }
+    }
+}
+
+
+
+@debug $utilities
