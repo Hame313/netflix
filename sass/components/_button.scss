@@ -6,14 +6,16 @@
     cursor: pointer;
     display: inline-block;
     border: 0;
-    padding: variables.$base-padding variables.$base-padding*4;
+    padding: variables.$base-padding variables.$base-padding*1;
+    margin: variables.$base-padding variables.$base-padding*1;
+    border-radius:50%;
     background-color: $bg-color;
-
+    @include mixins.center();
 }
 
 .firstBtn,.secondBtn{
     @include btn();
-    @include mixins.center();
+    
 }
 .goLeft, .goRight{
     @include btn();
@@ -41,7 +43,7 @@
         @include btn($val);
         //hover mora bit ispod klasa da bi radilo radi & znaka..
     &:hover{
-        background-color: lighten($color: $val, $amount: 5);
+        background-color: darken($color: $val, $amount: 10);
     }
 }
 }

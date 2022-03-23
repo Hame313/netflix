@@ -7,7 +7,7 @@ export function createVisual(data,index){
     
     const div =document.createElement("div");
     
-    div.classList.add('center')
+    //div.classList.add('center')
     div.classList.add(`${index}`)
     //
     // inserting a left button in the slider adding an image to the left button
@@ -54,8 +54,11 @@ export function createVisual(data,index){
             rightButton.previousElementSibling.style.scrollBehaviour = "smooth";
             rightButton.previousElementSibling.scrollLeft += 300;
             })
-
-    div.append(leftButton,carousel,rightButton)
+    
+    const flexDiv=document.createElement('div');
+    flexDiv.append(leftButton,carousel,rightButton);
+    flexDiv.classList.add("center");
+    div.append(flexDiv)
     const unique=document.querySelector('.placespeople');
     //unique.append(div);
     unique.insertAdjacentElement("afterend",div)
@@ -73,12 +76,15 @@ function createOverview(movie,card){
     const playBtnImg=document.createElement('img');
     playBtnImg.src="https://img.icons8.com/ios-glyphs/30/000000/play--v1.png";
     playBtn.append(playBtnImg);
+    playBtn.classList.add("btn-white")
     // creating a play button
     // save to local storage
     let movieAndId=`${movie.id}`;
     //saveToLocalStorage(movieAndId,movie["vote_count"])
     // creating a vote button 
     const voteBtn=document.createElement('button');
+    
+    voteBtn.classList.add("btn-white")
     const voteBtnImg=document.createElement('img');
     voteBtnImg.src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/32/000000/external-like-feedback-kmg-design-glyph-kmg-design.png";
     voteBtn.append(voteBtnImg);
@@ -88,12 +94,14 @@ function createOverview(movie,card){
     // creating a row of buttons and a vote count and a save to list button
     // vote count
     const voteCount=document.createElement('h1');
-    voteCount.classList.add('voteBtn');
+    voteCount.classList.add("btn-white");
+    voteCount.classList.add("text-black")
     const textVote=document.createTextNode(`${movie["vote_count"]}`)
     // save button
     const saveBtn=document.createElement('button');
     const saveBtnImg=document.createElement('img');
     saveBtnImg.src="https://img.icons8.com/windows/32/000000/save--v1.png";
+    saveBtn.classList.add("btn-white")
     saveBtn.append(saveBtnImg);
     saveToMyList(saveBtn,movie)
     voteCount.append(textVote);

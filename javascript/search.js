@@ -53,13 +53,24 @@ function visual(data,value){
     text.append(textNode);
  
     createVisual(data,value);
-    
+    addText(value);
     noData(value);
   
 }
+function addText(value){
+    let  newClass=document.querySelector(`.${value}`);
+    let text=document.createElement("h1");
+    text.classList.add("text-center")
+    let addText=document.createTextNode(`Here are results for ${value}`)
+    text.append(addText);
+    newClass.append(text);
+    newClass.style.display="flex";
+    newClass.style.flexDirection="column-reverse";
+
+}
+
 
 function noData(value){
-    
     const input=document.getElementById("search");
    if(value !== undefined || value === "" || value === null){
        console.log(value);
