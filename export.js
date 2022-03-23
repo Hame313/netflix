@@ -1,3 +1,9 @@
+const APIKEY = "88ae50ad0db315a0aaf983a64911b45b";
+const frontImageUrl="https://image.tmdb.org/t/p/w1280";
+const imageBase="https://image.tmdb.org/t/p/w300";
+const searchQuery=`https://api.themoviedb.org/3/search/movie?api_key=${APIKEY}&query=`;
+
+export {APIKEY, frontImageUrl,imageBase,searchQuery};
 export async function getMovieData(){
     const apiMAP=[
     {
@@ -45,6 +51,7 @@ let arr=[];
 
 export async function getMovies(url){
     try{
+        
         return await axios.get(url).then(({ data })=>data.results);   
     }
     catch(e){

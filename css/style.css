@@ -211,7 +211,8 @@ body {
   width: 100%;
   position: absolute;
   z-index: 5;
-  background-color: transparent;
+  background: #020024;
+  background: linear-gradient(180deg, #020024 0%, rgba(0, 0, 0, 0) 100%, rgba(0, 212, 255, 0) 100%);
   top: 0;
   list-style: none;
 }

@@ -19,7 +19,7 @@ return dragon;
 
 
 function displayList(){
-   let results=getEntries()
+    let results=getEntries()
     if(typeof results != "undefined"){
     let data=results.map((value)=>{
         return value.split(",");
@@ -37,7 +37,6 @@ function displayList(){
     center.style.position="relative";
     center.style.top="30vh";
    
-
     const leftButton=document.createElement("button");
     leftButton.classList.add('goLeft');
     const leftButtonImg=document.createElement('img');
