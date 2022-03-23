@@ -45,5 +45,12 @@
     &:hover{
         background-color: darken($color: $val, $amount: 10);
     }
+    @include mixins.phone{
+      
+        img{
+            width: 15px;
+        }
+       
+    }
 }
 }

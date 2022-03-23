@@ -1,0 +1,7 @@
+@use '../sass-utils/mixins.scss'as m;
+@use '../sass-utils/variables.scss' as v;
+@include m.headings{
+    line-height: 1.1;
+    font-weight: 600;
+    
+}

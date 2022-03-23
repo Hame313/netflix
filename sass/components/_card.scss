@@ -1,13 +1,11 @@
 @use '../sass-utils/variables.scss';
-
+@use '../sass-utils/mixins' as m;
 .card{
 display: flex;
 flex-direction: column;
 padding: variables.$base-padding;
 min-height: min-content;   
-img{
-    border-radius: 2px;
-}
+
 .card-title{
     font-size: variables.$base-font-size;
     padding-bottom:variables.$base-padding;
@@ -33,5 +31,10 @@ img{
         display: none;
         padding: 0.5em;
         border-bottom: 1px solid grey;        
-}  
+}
+.card-img{
+   @include m.phone{
+       width: 230px;
+   }
+}
 }

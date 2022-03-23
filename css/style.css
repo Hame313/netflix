@@ -149,41 +149,6 @@ body {
   margin: 0.5em;
   z-index: 5;
 }
-.frontLine .content-box .column {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
-  width: 30em;
-}
-.frontLine .content-box .column h1 {
-  font-size: 3.8rem;
-  text-align: start;
-}
-.frontLine .content-box .column p {
-  word-wrap: break-word;
-  font-size: 1.8rem;
-}
-.frontLine .content-box .column .row {
-  display: flex;
-  gap: 2em;
-}
-.frontLine .content-box .column .row button {
-  display: flex;
-  justify-content: center;
-  gap: 0.5em;
-  font-size: large;
-  align-items: center;
-  width: 9em;
-  height: 3em;
-  padding: 0;
-  border: none;
-}
-.frontLine .content-box .column .row button:focus {
-  outline: none;
-}
-.frontLine .content-box .column .row .firstBtn:hover {
-  background-color: grey;
-}
 
 .poster-image {
   width: 100%;
@@ -205,6 +170,11 @@ body {
   -webkit-box-shadow: 0 8px 30px -6px grey;
   -moz-box-shadow: 0 8px 30px -6px grey;
   box-shadow: 0 8px 6px -6px grey;
+}
+@media (max-width: 599px) {
+  #player {
+    height: 100%;
+  }
 }
 
 .start {
@@ -279,14 +249,22 @@ body {
 .pop-up {
   position: fixed;
   top: 40%;
-  left: 40%;
-  width: 50em;
+  left: 50%;
+  width: 30em;
+  border-radius: 10px;
   z-index: 99;
   margin-top: -9em;
   /*set to a negative number 1/2 of your height*/
   margin-left: -15em;
   border-radius: 10px;
   /*set to a negative number 1/2 of your width*/
+}
+@media (max-width: 599px) {
+  .pop-up {
+    top: 40%;
+    width: 30em;
+    right: 90%;
+  }
 }
 .pop-up img {
   width: 100%;
@@ -325,9 +303,6 @@ body {
   padding: 0.5rem;
   min-height: min-content;
 }
-.card img {
-  border-radius: 2px;
-}
 .card .card-title {
   font-size: 1rem;
   padding-bottom: 0.5rem;
@@ -353,6 +328,11 @@ body {
   display: none;
   padding: 0.5em;
   border-bottom: 1px solid grey;
+}
+@media (max-width: 599px) {
+  .card .card-img {
+    width: 230px;
+  }
 }
 
 .firstBtn, .secondBtn {
@@ -424,6 +404,11 @@ body {
 .btn-red:hover {
   background-color: #a80000;
 }
+@media (max-width: 599px) {
+  .btn-red img {
+    width: 15px;
+  }
+}
 
 .btn-black {
   text-decoration: none;
@@ -440,6 +425,11 @@ body {
 }
 .btn-black:hover {
   background-color: black;
+}
+@media (max-width: 599px) {
+  .btn-black img {
+    width: 15px;
+  }
 }
 
 .btn-white {
@@ -458,6 +448,11 @@ body {
 .btn-white:hover {
   background-color: #e6e6e6;
 }
+@media (max-width: 599px) {
+  .btn-white img {
+    width: 15px;
+  }
+}
 
 .btn-grey {
   text-decoration: none;
@@ -474,6 +469,11 @@ body {
 }
 .btn-grey:hover {
   background-color: #3b3535;
+}
+@media (max-width: 599px) {
+  .btn-grey img {
+    width: 15px;
+  }
 }
 
 .btn-dark-red {
@@ -492,6 +492,11 @@ body {
 .btn-dark-red:hover {
   background-color: #560a0a;
 }
+@media (max-width: 599px) {
+  .btn-dark-red img {
+    width: 15px;
+  }
+}
 
 .btn-transparent {
   text-decoration: none;
@@ -509,7 +514,78 @@ body {
 .btn-transparent:hover {
   background-color: rgba(0, 0, 0, 0);
 }
+@media (max-width: 599px) {
+  .btn-transparent img {
+    width: 15px;
+  }
+}
 
+.text-size1 {
+  line-height: 1.1;
+  font-weight: 600;
+  font-size: 0.5rem;
+}
+
+@media (max-width: 599px) {
+  .text-size1 {
+    font-size: 0.2857142857rem;
+  }
+}
+.text-size2 {
+  line-height: 1.1;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+@media (max-width: 599px) {
+  .text-size2 {
+    font-size: 0.5714285714rem;
+  }
+}
+.text-size3 {
+  line-height: 1.1;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 599px) {
+  .text-size3 {
+    font-size: 0.8571428571rem;
+  }
+}
+.text-size4 {
+  line-height: 1.1;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+@media (max-width: 599px) {
+  .text-size4 {
+    font-size: 1.1428571429rem;
+  }
+}
+.text-size5 {
+  line-height: 1.1;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+@media (max-width: 599px) {
+  .text-size5 {
+    font-size: 1.4285714286rem;
+  }
+}
+.text-size6 {
+  line-height: 1.1;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+@media (max-width: 599px) {
+  .text-size6 {
+    font-size: 1.7142857143rem;
+  }
+}
 .container {
   width: 100%;
   max-width: 1200px;

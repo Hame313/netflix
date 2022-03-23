@@ -1,4 +1,5 @@
 @use '../sass-utils/variables.scss'; 
+@use '../sass-utils/mixins.scss' as m;
 .frontLine{
     position: relative;
     z-index: 0;
@@ -8,45 +9,7 @@
     left: 7%;
     margin: 0.5em;
     z-index: 5;
-    .column{
-        display: flex;
-        flex-direction: column;
-        gap: 1.5em;
-        width: 30em;
-    h1{
-       
-        font-size: 3.8rem;
-        text-align: start;
-    }
-    p{
-        word-wrap: break-word;
-        font-size: 1.8rem;
-    }
-    .row{
-        display: flex;
-        gap: 2em;
-        button{
-            display: flex;
-            justify-content: center;
-            gap: 0.5em;
-            font-size: large;
-            align-items: center;
-            width: 9em;
-            height: 3em;
-            padding: 0;
-            border: none;
-            
-        &:focus{
-            outline: none;
-        }
-        }
-        
-        .firstBtn:hover{
-            background-color: grey;
-        }
-    }
-
- }   
+   
 }
 }
 .poster-image {
@@ -68,6 +31,9 @@
     -webkit-box-shadow: 0 8px 30px -6px grey;
     -moz-box-shadow: 0 8px 30px -6px grey;
     box-shadow: 0 8px 6px -6px grey;
+    @include m.phone{
+        height: 100%;
+    }
 }   
 
 .start{

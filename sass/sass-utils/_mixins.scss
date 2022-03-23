@@ -1,4 +1,5 @@
 @use "variables" as v;
+@use 'sass:math';
 
 @mixin fullImage{
     width: 100%;
@@ -40,5 +41,37 @@
 @mixin breakpoint($bp:0){
     @media (min-width: $bp){
         @content;
+    }
+}
+
+
+@mixin phone{
+    @media (max-width:599px){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media(min-width:600px){
+        @content;
+    }
+}
+@mixin desktop{
+    @media (min-width:1200px){
+        @content;
+    }
+}
+@mixin headings {
+    @for $index from 1 through 6 {
+        .text-size#{$index} {
+            @content;
+            font-size:math.div($index,2)+rem;
+        
+        }
+        @include phone{
+            .text-size#{$index}{
+                font-size:math.div($index,3.5)+rem;
+            }
+        }
     }
 }

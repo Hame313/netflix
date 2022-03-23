@@ -18,7 +18,7 @@ export function createVisual(data,index){
     leftButton.append(leftButtonImg);
     // adding an event listener for left button
     leftButton.addEventListener('click', () => {
-                leftButton.nextElementSibling.scrollLeft -= 300;
+                leftButton.nextElementSibling.scrollLeft -= 250;
             })
         
     //
@@ -30,6 +30,7 @@ export function createVisual(data,index){
     const card =document.createElement("div");
     card.classList.add("card");
     const cardImg=document.createElement("img");
+    cardImg.classList.add("card-img");
     if(movie["backdrop_path"] === null ){
         cardImg.src="./img/netf.png"
     }else{
@@ -52,7 +53,7 @@ export function createVisual(data,index){
     // adding an eventListener for the right button
     rightButton.addEventListener('click', (e) => {
             rightButton.previousElementSibling.style.scrollBehaviour = "smooth";
-            rightButton.previousElementSibling.scrollLeft += 300;
+            rightButton.previousElementSibling.scrollLeft += 250;
             })
     
     const flexDiv=document.createElement('div');
@@ -96,6 +97,7 @@ function createOverview(movie,card){
     const voteCount=document.createElement('h1');
     voteCount.classList.add("btn-white");
     voteCount.classList.add("text-black")
+    
     const textVote=document.createTextNode(`${movie["vote_count"]}`)
     // save button
     const saveBtn=document.createElement('button');

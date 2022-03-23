@@ -27,7 +27,7 @@ function displayList(){
     let your=document.createElement('h1');
     let texting=document.createTextNode("Your list is displayed on this slider")
     your.style.textAlign="center";
-    your.style.fontSize="2em"
+    your.classList.add("text-size5")
     your.style.position="relative";
     your.style.top="20vh";
     your.append(texting);
@@ -66,11 +66,14 @@ function displayList(){
         let card=document.createElement('div');
         card.classList.add('card');
         let cardTitle=document.createElement('h1');
+        cardTitle.classList.add("text-size3");
+        cardTitle.classList.add("text-center")
         let text=document.createTextNode(`${value[0]}`)
         cardTitle.append(text);
 
         let cardImg=document.createElement('img');
         cardImg.src=`${value[1]}`;
+        cardImg.classList.add("card-img")
         card.append(cardImg,cardTitle);
         let carousel=document.querySelector('.carousel');
         carousel.append(card);
@@ -79,7 +82,7 @@ function displayList(){
     })
 }
 else {
-    console.log("nothing much to do")
+    console.log("error with  logging out values")
 }
 }
 function displayNone(){
@@ -89,7 +92,7 @@ function displayNone(){
     text.style.position="relative";
     text.style.textAlign="center";
     text.style.top="40vh"
-    text.style.fontSize="4em";
+    text.classList.add("text-size6")
     document.body.append(text);
 }
 window.onload=displayList();

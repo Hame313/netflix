@@ -15,11 +15,11 @@ export async function getFrontPage(){
     front.insertAdjacentHTML("afterbegin",
     `<img class="poster-image" alt="${movie.original_title}" src="${image}"> 
     <div class="content-box">
-    <div class="column">
-    <h1 class=" text-white">${movie.original_title}</h1>
-    <p class=" text-white">${movie.overview.slice(0,120)+"..."}</p>
+    <div class="col-6-md">
+    <h1 class="text-size5 text-white">${movie.original_title}</h1>
+    <p class="text-size3 text-white">${movie.overview.slice(0,120)+"..."}</p>
     <div class="row">
-        <button id="videoPlayer" class=" bg-white bRadius-2" type="button"><img src="https://img.icons8.com/ios-glyphs/30/000000/play--v1.png"/>Play</button>
+        <button id="videoPlayer" class="btn-white bg-white bRadius-1" type="button"><img src="https://img.icons8.com/ios-glyphs/30/000000/play--v1.png"><p class="text-size3">Play</p></button>
         
     </div>
     </div>
@@ -58,7 +58,7 @@ export function createPlayerForFrontPage(videoId) {
         const   content=document.querySelector('.content-box');
         const button= document.getElementById('videoPlayer');
         const frame=document.querySelector('iframe');
-        const textRemoval=document.querySelector('.column');
+        const textRemoval=document.querySelector('.col-6-md');
         const pTag=textRemoval.children[1]
         frame.classList.add('disp-none')
         let clickCounter=0;
@@ -81,7 +81,7 @@ export function createPlayerForFrontPage(videoId) {
 }
 function onPlayerStateChange(event) {
     const   content=document.querySelector('.content-box');
-    const textRemoval=document.querySelector('.column');
+    const textRemoval=document.querySelector('.col-6-md');
     const pTag=textRemoval.children[1]
     const players=document.querySelectorAll("#player");
     if (event.data == YT.PlayerState.ENDED ) {    

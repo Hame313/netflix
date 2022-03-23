@@ -61,6 +61,7 @@ function addText(value){
     let  newClass=document.querySelector(`.${value}`);
     let text=document.createElement("h1");
     text.classList.add("text-center")
+    text.classList.add("text-size5")
     let addText=document.createTextNode(`Here are results for ${value}`)
     text.append(addText);
     newClass.append(text);

@@ -1,11 +1,16 @@
-@use "../sass-utils/mixins";
+@use "../sass-utils/mixins" as m;
 
 .pop-up{
     position:fixed;
     top: 40%;
-    left: 40%;
-    width:50em;
-
+    left: 50%;
+    width:30em;
+    border-radius: 10px;
+    @include m.phone{
+        top:40%;
+        width: 30em;
+        right: 90%;
+    }
     z-index: 99;
     margin-top: -9em;
     /*set to a negative number 1/2 of your height*/
@@ -13,7 +18,7 @@
     border-radius: 10px;
     /*set to a negative number 1/2 of your width*/
     img {
-        @include mixins.fullImage;
+        @include m.fullImage;
     }
     .box{
         padding:1em;
@@ -34,8 +39,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-   
-      
         padding: 1em;
         
     }
